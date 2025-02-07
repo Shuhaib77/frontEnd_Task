@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
  import Saidebar from '../components/Saidebar'
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Usermanage from "../components/superadmin/Usermanage";
-import Form from "../components/Form";
+
 import Adduser from "../components/user/Adduser";
 import Formsdata from "../components/Formsdata";
 
 function Dashboard() {
+  
+
   const { url } = useParams();
   const { val } = useParams();
   console.log(val,"dcdc");
@@ -216,7 +218,7 @@ function Dashboard() {
         <Saidebar role={role} demo={demo} val={val}/>
         {/* <Sai } /> */}
       </div>
-     <div className=" grid grid-cols-1">
+     <div className=" grid grid-cols-1 w-full">
      <div className="w-full">
         <Header />
       </div>
@@ -225,7 +227,7 @@ function Dashboard() {
         {  val==="superadmin"?
         (
           <div style={{ width: "100%" }}>
-            {url === "adduser" && < Formsdata/>}
+            {url === "adduser" &&  < Formsdata  />}
           </div>
         ) : val === "admin" ? (
           <div style={{ width: "100%" }}>
